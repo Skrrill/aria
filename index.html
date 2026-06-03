@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aria, Dating Confidence Coaching</title>
+<meta name="description" content="Personal dating-confidence coaching with a real coach behind every avatar." />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Hanken Grotesk',sans-serif;background:#0E0B14;color:#F4F1EE;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Fraunces',serif}
+::selection{background:#FF8A5B;color:#0E0B14}
+a{text-decoration:none;color:inherit}
+
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.glass{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(12px)}
+.aurora{background:linear-gradient(120deg,#FF8A5B,#E15B9E,#7B6CF6,#FF8A5B);background-size:300% 300%;animation:shimmer 9s ease infinite;-webkit-background-clip:text;background-clip:text;color:transparent}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.45;pointer-events:none}
+.fb{transform-box:fill-box;transform-origin:center}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;cursor:pointer;border:none;transition:all .25s ease}
+.btn-white{background:#fff;color:#0E0B14}
+.btn-white:hover{opacity:.9}
+
+.muted{color:rgba(255,255,255,.55)}
+.muted2{color:rgba(255,255,255,.45)}
+.muted3{color:rgba(255,255,255,.35)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(16px);background:rgba(14,11,20,.8);border-bottom:1px solid rgba(255,255,255,.1)}
+.navrow{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.logo{font-size:24px;font-weight:600}
+.nav-cta{padding:8px 16px;border-radius:999px;font-size:14px}
+
+/* hero */
+header{position:relative;overflow:hidden}
+.hero{position:relative;text-align:center;padding:56px 0 40px}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;font-size:13px;color:rgba(255,255,255,.7);margin-bottom:28px}
+h1{font-weight:500;line-height:1.03;letter-spacing:-.02em;font-size:clamp(38px,8.5vw,58px)}
+.subtitle{color:rgba(255,255,255,.55);margin:20px auto 0;max-width:380px;line-height:1.55;font-size:17px}
+.dot{width:8px;height:8px;border-radius:999px;background:#34d399;animation:pulse 2s infinite}
+
+/* avatar */
+.avatar-box{position:relative;margin:32px auto 12px;width:210px;height:210px}
+.avatar-aura{position:absolute;inset:0;border-radius:999px;background:radial-gradient(circle,rgba(255,138,91,.30),transparent 62%);animation:pulse 4s ease-in-out infinite}
+.bubble{position:absolute;right:-6px;top:18px;display:flex;align-items:center;gap:5px;padding:10px 12px;border-radius:16px;animation:float 3.5s ease-in-out infinite}
+.bubble span{width:6px;height:6px;border-radius:999px;background:rgba(255,255,255,.7)}
+.bubble span:nth-child(1){animation:pulse 1.2s ease-in-out infinite}
+.bubble span:nth-child(2){animation:pulse 1.2s ease-in-out .2s infinite}
+.bubble span:nth-child(3){animation:pulse 1.2s ease-in-out .4s infinite}
+
+.id-chip{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;font-size:14px}
+.id-chip .nm{color:rgba(255,255,255,.85);font-weight:600}
+.sep{color:rgba(255,255,255,.4)}
+.bar{color:rgba(255,255,255,.2)}
+
+.hero-cta{margin-top:36px}
+.btn-lg{padding:16px 32px;border-radius:999px;font-size:16px}
+.cohort{margin-top:16px;font-size:14px;color:rgba(255,255,255,.4)}
+.chev{margin:36px auto 0;display:block;color:rgba(255,255,255,.25);animation:float 3s ease-in-out infinite;cursor:pointer}
+
+/* sections */
+section{position:relative}
+.explainer{padding:24px 0 40px}
+.explainer .card{display:flex;align-items:center;gap:20px;padding:26px;border-radius:24px}
+.explainer h3{font-size:18px;margin-bottom:4px}
+.explainer p{color:rgba(255,255,255,.55);font-size:15px;line-height:1.45}
+.mini{flex-shrink:0;position:relative;width:92px;height:92px}
+
+.how{padding:48px 0}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.scard{padding:24px;border-radius:24px;height:100%}
+.sicon{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.snum{font-size:14px;font-weight:600;margin-bottom:6px}
+.scard h3{font-size:18px;margin-bottom:6px}
+.scard p{color:rgba(255,255,255,.5);font-size:15px;line-height:1.35}
+
+.compare{padding:48px 0}
+.compare h2{text-align:center;font-weight:500;font-size:clamp(28px,6vw,38px);margin-bottom:40px;line-height:1.1}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ccard{padding:24px;border-radius:24px;height:100%}
+.ccard .lbl{font-size:14px;margin-bottom:16px}
+.iconrow{height:40px;display:flex;align-items:center;margin-bottom:20px}
+.ccard ul{list-style:none}
+.ccard li{font-size:14px;margin-bottom:8px;display:flex;gap:6px;align-items:flex-start}
+
+.safety{padding:48px 0;text-align:center}
+.safety p{color:rgba(255,255,255,.55);max-width:420px;margin:16px auto 28px;line-height:1.55}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;font-size:14px}
+.chip{padding:8px 16px;border-radius:999px;color:rgba(255,255,255,.65);display:flex;align-items:center;gap:6px}
+
+.cta{padding:48px 0;max-width:460px;margin:0 auto}
+.cta-card{position:relative;overflow:hidden;padding:32px;border-radius:28px;text-align:center}
+.price{font-weight:600;font-size:48px}
+.cta .lead{font-size:14px;color:rgba(255,255,255,.45);margin-bottom:4px}
+.cta .sub{font-size:14px;color:rgba(255,255,255,.45);margin-top:4px;margin-bottom:28px}
+.btn-full{width:100%;padding:16px;border-radius:16px}
+.fine{font-size:12px;color:rgba(255,255,255,.3);margin-top:16px;display:flex;align-items:center;justify-content:center;gap:6px}
+
+footer{border-top:1px solid rgba(255,255,255,.06);text-align:center;padding:36px 0}
+footer .logo{font-size:20px;margin-bottom:8px}
+footer p{font-size:12px;color:rgba(255,255,255,.3)}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal.shown{opacity:1;transform:none}
+
+svg.icon{width:18px;height:18px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+/* keyframes */
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-30px) scale(1.15)}100%{transform:translate(0,0) scale(1)}}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.06);opacity:.9}}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.12)}}
+@keyframes talk{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.5)}}
+@keyframes bobx{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-3px) rotate(1.2deg)}}
+@keyframes spinx{to{transform:rotate(360deg)}}
+@keyframes spark{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+.avt-eyes{animation:blink 4.5s ease-in-out infinite}
+.avt-mouth{animation:talk 1.1s ease-in-out infinite}
+.avt-bob{animation:bobx 5s ease-in-out infinite}
+.avt-spin{animation:spinx 7s linear infinite}
+.avt-spark{animation:spark 2.5s ease-in-out infinite}
+
+@media(max-width:640px){
+  .grid3{grid-template-columns:1fr}
+  .explainer .card{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap navrow">
+    <span class="logo serif aurora">Aria</span>
+    <a href="#cta" class="btn btn-white nav-cta">Join waitlist</a>
+  </div>
+</nav>
+
+<header>
+  <div class="orb" style="width:360px;height:360px;background:#FF8A5B;top:-80px;left:-60px;animation:drift 14s ease-in-out infinite"></div>
+  <div class="orb" style="width:320px;height:320px;background:#7B6CF6;top:40px;right:-80px;animation:drift 18s ease-in-out infinite reverse"></div>
+  <div class="orb" style="width:260px;height:260px;background:#E15B9E;bottom:-60px;left:40%;animation:pulse 10s ease-in-out infinite"></div>
+
+  <div class="wrap hero">
+    <div class="badge glass"><span class="dot"></span> Private beta opening soon</div>
+    <h1 class="serif">Get good at<br /><span class="aurora">talking to her.</span></h1>
+    <p class="subtitle">Personal dating coaching, with a real coach behind every avatar.</p>
+
+    <!-- AVATAR -->
+    <div class="avatar-box">
+      <div class="avatar-aura"></div>
+      <svg viewBox="0 0 200 200" width="210" height="210" style="position:relative;display:block">
+        <defs>
+          <radialGradient id="bg" cx="50%" cy="38%" r="72%"><stop offset="0%" stop-color="#2A2140"/><stop offset="100%" stop-color="#160F26"/></radialGradient>
+          <linearGradient id="hair" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5A3060"/><stop offset="100%" stop-color="#2A1733"/></linearGradient>
+          <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF8A5B"/><stop offset="50%" stop-color="#E15B9E"/><stop offset="100%" stop-color="#7B6CF6"/></linearGradient>
+          <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F7CBAB"/><stop offset="100%" stop-color="#EAB18D"/></linearGradient>
+        </defs>
+        <circle cx="100" cy="100" r="86" fill="url(#bg)"/>
+        <circle cx="100" cy="100" r="92" fill="none" stroke="url(#ring)" stroke-width="3" opacity="0.35"/>
+        <circle cx="100" cy="100" r="92" fill="none" stroke="url(#ring)" stroke-width="4" stroke-linecap="round" stroke-dasharray="46 410" class="avt-spin fb"/>
+        <g class="avt-bob fb">
+          <path d="M52 112 Q47 50 100 45 Q153 50 148 112 Q150 142 138 152 L62 152 Q50 142 52 112 Z" fill="url(#hair)"/>
+          <rect x="88" y="128" width="24" height="26" rx="10" fill="#EAB18D"/>
+          <ellipse cx="100" cy="104" rx="38" ry="42" fill="url(#skin)"/>
+          <circle cx="62" cy="106" r="7" fill="#EAB18D"/>
+          <circle cx="138" cy="106" r="7" fill="#EAB18D"/>
+          <path d="M64 92 Q66 56 100 54 Q134 56 136 92 Q120 73 100 74 Q80 73 64 92 Z" fill="url(#hair)"/>
+          <ellipse cx="78" cy="117" rx="7" ry="4" fill="#F79EA8" opacity="0.55"/>
+          <ellipse cx="122" cy="117" rx="7" ry="4" fill="#F79EA8" opacity="0.55"/>
+          <path d="M76 91 Q84 87 92 91" stroke="#3A2433" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M108 91 Q116 87 124 91" stroke="#3A2433" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <g class="avt-eyes fb">
+            <ellipse cx="84" cy="102" rx="5.5" ry="7" fill="#2A2233"/>
+            <ellipse cx="116" cy="102" rx="5.5" ry="7" fill="#2A2233"/>
+            <circle cx="86" cy="100" r="1.8" fill="#fff"/>
+            <circle cx="118" cy="100" r="1.8" fill="#fff"/>
+          </g>
+          <path class="avt-mouth fb" d="M92 122 Q100 129 108 122" stroke="#C0566B" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <circle cx="62" cy="118" r="3.6" fill="none" stroke="#FF8A5B" stroke-width="2.4"/>
+          <circle cx="138" cy="118" r="3.6" fill="none" stroke="#FF8A5B" stroke-width="2.4"/>
+          <path d="M70 66 Q90 56 108 60" stroke="#C77CC2" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <path class="avt-spark fb" d="M150 58 l1.8 4.8 4.8 1.8 -4.8 1.8 -1.8 4.8 -1.8 -4.8 -4.8 -1.8 4.8 -1.8 z" fill="#FFD9A8"/>
+        </g>
+      </svg>
+      <div class="bubble glass"><span></span><span></span><span></span></div>
+    </div>
+
+    <div class="id-chip glass">
+      <span class="dot"></span>
+      <span class="nm">Riya</span><span class="sep">&middot;</span><span class="muted">Dating coach</span>
+      <span class="bar">|</span>
+      <svg class="icon" style="width:13px;height:13px;color:rgba(255,255,255,.45)" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+      <span style="color:rgba(255,255,255,.45);font-size:13px">identity private</span>
+    </div>
+
+    <div class="hero-cta">
+      <a href="#cta" class="btn btn-white btn-lg">Get early access
+        <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="cohort">Join the founding cohort</div>
+    <a href="#how" class="chev"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+  </div>
+</header>
+
+<!-- EXPLAINER -->
+<section class="explainer">
+  <div class="wrap reveal">
+    <div class="card glass">
+      <div class="mini">
+        <svg viewBox="0 0 200 200" width="92" height="92" style="display:block">
+          <circle cx="100" cy="100" r="86" fill="url(#bg)"/>
+          <circle cx="100" cy="100" r="92" fill="none" stroke="url(#ring)" stroke-width="6" opacity="0.4"/>
+          <g class="avt-bob fb">
+            <path d="M52 112 Q47 50 100 45 Q153 50 148 112 Q150 142 138 152 L62 152 Q50 142 52 112 Z" fill="url(#hair)"/>
+            <rect x="88" y="128" width="24" height="26" rx="10" fill="#EAB18D"/>
+            <ellipse cx="100" cy="104" rx="38" ry="42" fill="url(#skin)"/>
+            <circle cx="62" cy="106" r="7" fill="#EAB18D"/><circle cx="138" cy="106" r="7" fill="#EAB18D"/>
+            <path d="M64 92 Q66 56 100 54 Q134 56 136 92 Q120 73 100 74 Q80 73 64 92 Z" fill="url(#hair)"/>
+            <ellipse cx="78" cy="117" rx="7" ry="4" fill="#F79EA8" opacity="0.55"/><ellipse cx="122" cy="117" rx="7" ry="4" fill="#F79EA8" opacity="0.55"/>
+            <path d="M76 91 Q84 87 92 91" stroke="#3A2433" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M108 91 Q116 87 124 91" stroke="#3A2433" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <g class="avt-eyes fb"><ellipse cx="84" cy="102" rx="5.5" ry="7" fill="#2A2233"/><ellipse cx="116" cy="102" rx="5.5" ry="7" fill="#2A2233"/><circle cx="86" cy="100" r="1.8" fill="#fff"/><circle cx="118" cy="100" r="1.8" fill="#fff"/></g>
+            <path class="avt-mouth fb" d="M92 122 Q100 129 108 122" stroke="#C0566B" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="62" cy="118" r="3.6" fill="none" stroke="#FF8A5B" stroke-width="2.4"/><circle cx="138" cy="118" r="3.6" fill="none" stroke="#FF8A5B" stroke-width="2.4"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h3>A real coach. A fun avatar.</h3>
+        <p>Behind every avatar is a real, trained dating coach. You hear her real voice and get real feedback. The avatar simply keeps her identity private, so she can coach freely and you can practice without pressure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="grid3">
+      <div class="scard glass reveal">
+        <div class="sicon" style="background:#FF8A5B22"><svg class="icon" style="color:#FF8A5B;width:24px;height:24px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="#FF8A5B" stroke="none"/></svg></div>
+        <div class="snum serif" style="color:#FF8A5B">01</div>
+        <h3>Pick your focus</h3>
+        <p>Breaking the ice. Keeping it flowing. Flirting without freezing.</p>
+      </div>
+      <div class="scard glass reveal">
+        <div class="sicon" style="background:#E15B9E22"><svg class="icon" style="color:#E15B9E;width:24px;height:24px" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="19" x2="12" y2="22"/></svg></div>
+        <div class="snum serif" style="color:#E15B9E">02</div>
+        <h3>Coach you 1-on-1</h3>
+        <p>A private voice session with a real coach behind her avatar.</p>
+      </div>
+      <div class="scard glass reveal">
+        <div class="sicon" style="background:#7B6CF622"><svg class="icon" style="color:#7B6CF6;width:24px;height:24px" viewBox="0 0 24 24"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div>
+        <div class="snum serif" style="color:#7B6CF6">03</div>
+        <h3>Real feedback</h3>
+        <p>She shows you what works, then you practice till it feels natural.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="compare">
+  <div class="wrap">
+    <h2 class="serif reveal">A bot can't<br />actually coach you.</h2>
+    <div class="grid2">
+      <div class="ccard glass reveal">
+        <div class="lbl muted3">AI apps</div>
+        <div class="iconrow"><svg viewBox="0 0 24 24" style="width:28px;height:28px;stroke:rgba(255,255,255,.3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4"/><circle cx="12" cy="3" r="1.4" fill="rgba(255,255,255,.3)" stroke="none"/><circle cx="9" cy="14" r="1.2" fill="rgba(255,255,255,.3)" stroke="none"/><circle cx="15" cy="14" r="1.2" fill="rgba(255,255,255,.3)" stroke="none"/></svg></div>
+        <ul class="muted2">
+          <li>Always agrees</li><li>Never real stakes</li><li>Doesn't carry over</li>
+        </ul>
+      </div>
+      <div class="ccard reveal" style="border:1px solid #FF8A5B55;background:linear-gradient(160deg,#FF8A5B18,#7B6CF618)">
+        <div class="lbl" style="color:#FF8A5B">Aria</div>
+        <div class="iconrow"><svg viewBox="0 0 24 24" style="width:28px;height:28px;stroke:#FF8A5B;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3.2 1.2 4 2.3.8-1.1 2-2.3 4-2.3 3.5 0 5 3.5 3.5 6.5C19 16.5 12 21 12 21z"/></svg></div>
+        <ul style="color:rgba(255,255,255,.8)">
+          <li><svg class="icon" style="color:#34d399;width:15px;height:15px;margin-top:2px" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Real, in the moment</li>
+          <li><svg class="icon" style="color:#34d399;width:15px;height:15px;margin-top:2px" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Honest feedback</li>
+          <li><svg class="icon" style="color:#34d399;width:15px;height:15px;margin-top:2px" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Builds real confidence</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAFETY -->
+<section class="safety">
+  <div class="wrap reveal">
+    <svg style="width:28px;height:28px;stroke:#7B6CF6;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin:0 auto" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
+    <p>Professional coaching, not dating. A private space to build a real skill, with coaches who are respected adults.</p>
+    <div class="chips">
+      <span class="chip glass"><svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="19" x2="12" y2="22"/></svg> Voice-based</span>
+      <span class="chip glass"><svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Avatar-protected</span>
+      <span class="chip glass"><svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3.2 1.2 4 2.3.8-1.1 2-2.3 4-2.3 3.5 0 5 3.5 3.5 6.5C19 16.5 12 21 12 21z"/></svg> Judgment-free</span>
+      <span class="chip glass"><svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg> 18+ &amp; safe</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="cta">
+  <div class="wrap reveal">
+    <div class="cta-card glass">
+      <div class="orb" style="width:200px;height:200px;background:#FF8A5B;top:-100px;right:-60px;opacity:.25"></div>
+      <div style="position:relative">
+        <div class="lead">Founding member price</div>
+        <div class="price serif aurora">&#8377;1,499</div>
+        <div class="sub">per month, unlimited coaching</div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc1tc82jkg-umsFKelRGAViVqMDJsIyTjCdAOjbnSudGgoM5w/viewform" target="_blank" rel="noopener noreferrer" class="btn btn-white btn-full">
+          Reserve my spot
+          <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <div class="fine"><svg class="icon" style="width:11px;height:11px" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> No charge now. Just reserving your invite.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo serif aurora">Aria</div>
+    <p>Professional dating-confidence coaching. 18+ only.</p>
+  </div>
+</footer>
+
+<script>
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('shown'); });
+  }, { threshold: 0.18 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+
+</body>
+</html>
