@@ -18,7 +18,7 @@ a{text-decoration:none;color:inherit}
 .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
 .narrow{max-width:640px;margin:0 auto}
 .glass{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(12px)}
-.aurora{background:linear-gradient(120deg,#FF8A5B,#E15B9E,#7B6CF6,#FF8A5B);background-size:300% 300%;animation:shimmer 9s ease infinite;-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block;padding:0 2px}
+.aurora{background:linear-gradient(120deg,#FF8A5B,#E15B9E,#7B6CF6,#FF8A5B);background-size:300% 300%;animation:shimmer 9s ease infinite;-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block;padding:0 3px}
 .orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.4;pointer-events:none}
 .fb{transform-box:fill-box;transform-origin:center}
 
@@ -143,6 +143,12 @@ svg.icon{width:18px;height:18px;stroke:currentColor;stroke-width:2;fill:none;str
 @media(max-width:640px){
   .grid3{grid-template-columns:1fr}
   .explainer .card{flex-direction:column;text-align:center}
+  .wrap{padding:0 22px}
+  .hero{padding:26px 0 40px}
+  .badge{margin-bottom:18px}
+  .hero-inner{gap:6px}
+  .avatar-box{width:220px;height:220px}
+  .avatar-box svg.face{width:220px;height:220px}
 }
 </style>
 </head>
@@ -290,7 +296,7 @@ svg.icon{width:18px;height:18px;stroke:currentColor;stroke-width:2;fill:none;str
       </div>
       <div class="ccard reveal" style="border:1px solid #FF8A5B55;background:linear-gradient(160deg,#FF8A5B18,#7B6CF618)">
         <div class="lbl" style="color:#FF8A5B">Aria</div>
-        <div class="iconrow"><svg viewBox="0 0 24 24" style="width:28px;height:28px;stroke:#FF8A5B;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3.2 1.2 4 2.3.8-1.1 2-2.3 4-2.3 3.5 0 5 3.5 3.5 6.5C19 16.5 12 21 12 21z"/></svg></div>
+        <div class="iconrow"><svg viewBox="0 0 24 24" style="width:28px;height:28px;stroke:#FF8A5B;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
         <ul style="color:rgba(255,255,255,.8)">
           <li><svg class="icon" style="color:#34d399;width:15px;height:15px;margin-top:2px" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Real, in the moment</li>
           <li><svg class="icon" style="color:#34d399;width:15px;height:15px;margin-top:2px" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Honest feedback</li>
@@ -309,7 +315,7 @@ svg.icon{width:18px;height:18px;stroke:currentColor;stroke-width:2;fill:none;str
     <div class="chips">
       <span class="chip glass"><svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="19" x2="12" y2="22"/></svg> Voice-based</span>
       <span class="chip glass"><svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Avatar-protected</span>
-      <span class="chip glass"><svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3.2 1.2 4 2.3.8-1.1 2-2.3 4-2.3 3.5 0 5 3.5 3.5 6.5C19 16.5 12 21 12 21z"/></svg> Judgment-free</span>
+      <span class="chip glass"><svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg> Judgment-free</span>
       <span class="chip glass"><svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg> 18+ &amp; safe</span>
     </div>
   </div>
