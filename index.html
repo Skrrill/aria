@@ -18,7 +18,7 @@ a{text-decoration:none;color:inherit}
 .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
 .narrow{max-width:640px;margin:0 auto}
 .glass{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(12px)}
-.aurora{background:linear-gradient(120deg,#FF8A5B,#E15B9E,#7B6CF6,#FF8A5B);background-size:300% 300%;animation:shimmer 9s ease infinite;-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block;padding:0 3px}
+.aurora{background:linear-gradient(120deg,#FF8A5B,#E15B9E,#7B6CF6,#FF8A5B);background-size:300% 300%;animation:shimmer 9s ease infinite;-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block;padding:0 3px .12em}
 .orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.4;pointer-events:none}
 .fb{transform-box:fill-box;transform-origin:center}
 
@@ -42,7 +42,7 @@ header{position:relative;overflow:hidden}
 .hero-left{display:flex;flex-direction:column;align-items:center}
 .hero-right{display:flex;flex-direction:column;align-items:center;gap:18px}
 .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;font-size:13px;color:rgba(255,255,255,.7);margin-bottom:26px}
-h1{font-weight:500;line-height:1.02;letter-spacing:-.02em;font-size:clamp(40px,8vw,58px)}
+h1{font-weight:500;line-height:1.1;letter-spacing:-.02em;font-size:clamp(40px,8vw,58px);padding-bottom:6px}
 .subtitle{color:rgba(255,255,255,.55);margin:20px 0 0;max-width:400px;line-height:1.5;font-size:18px}
 .dot{width:8px;height:8px;border-radius:999px;background:#34d399;animation:pulse 2s infinite;flex-shrink:0}
 
@@ -144,6 +144,9 @@ svg.icon{width:18px;height:18px;stroke:currentColor;stroke-width:2;fill:none;str
   .grid3{grid-template-columns:1fr}
   .explainer .card{flex-direction:column;text-align:center}
   .wrap{padding:0 22px}
+  .navrow{padding:12px 0}
+  .logo{font-size:21px}
+  .nav-cta{padding:7px 15px;font-size:13px}
   .hero{padding:26px 0 40px}
   .badge{margin-bottom:18px}
   .hero-inner{gap:6px}
